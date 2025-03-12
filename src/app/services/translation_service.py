@@ -36,7 +36,9 @@ class SeamlessTranslator:
                 input_ids=text_inputs.input_ids,
                 attention_mask=text_inputs.attention_mask,
                 tgt_lang=tgt_lang,
-                max_length=1024
+                max_length=1024,
+                num_beams=5,
+                temperature=0.7,
             )
 
         translated_text = self.processor.decode(output_tokens[0], skip_special_tokens=True)
